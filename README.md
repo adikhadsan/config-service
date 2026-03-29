@@ -52,4 +52,7 @@
 - kubectl apply -f secret.yaml
 - kubectl apply -f deployment.yaml
 
+<img width="1277" height="296" alt="image" src="https://github.com/user-attachments/assets/54524ecd-f7bb-4544-a942-c2ed7f4a3774" />
+
+
 
