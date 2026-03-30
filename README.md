@@ -29,6 +29,32 @@
 - terraform plan
 - terraform apply
 
+## ConfigDB Setup
+
+This setup creates a configdb database and a configs table using a Kubernetes pod provisioned via Terraform.
+
+ *Table Schema
+    The configs table includes:
+      id (Primary Key, auto-increment)
+      host
+      port
+      app_name
+      log_level
+      
+CREATE DATABASE configdb;
+USE configdb;
+CREATE TABLE configs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    host VARCHAR(255),
+    port INT,
+    app_name VARCHAR(255),
+    log_level VARCHAR(50)
+);
+
+Usage
+Create a pod using Terraform
+Execute SQL inside the pod:
+kubectl exec -it <pod-name> -- mysql -u <user> -p<password> -e "<SQL_COMMANDS>"
 ---
 
 ## Build App
